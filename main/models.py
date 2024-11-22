@@ -18,9 +18,11 @@ class FantasyNames(models.Model):
 """
 
 
+# all items will exist on a to do list
 class Item(models.Model):
     todolist = models.ForeignKey(ToDoList, on_delete=models.CASCADE)
     text = models.CharField(max_length=300)
+    # has the item been completed? returns boolean
     complete = models.BooleanField()
 
     def __str__(self):
