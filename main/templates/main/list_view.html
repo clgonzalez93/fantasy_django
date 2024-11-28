@@ -6,7 +6,9 @@
 <h2>{{ls.name}}</h2>
     {% for item in ls.item_set.all %}
     <ul>
-        <li>{{item.text}}</li>
+        {% if item.complete == False %}
+            <li>{{item.text}}</li>
+        {% endif %}
     </ul>
     {% endfor %}
 {% endblock %}
