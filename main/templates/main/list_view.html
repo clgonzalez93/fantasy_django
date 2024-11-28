@@ -6,8 +6,10 @@
 <h2>{{ls.name}}</h2>
     {% for item in ls.item_set.all %}
     <ul>
-        {% if item.complete == False %}
-            <li>{{item.text}}</li>
+        {% if item.complete == True %}
+            <li>{{item.text}} = COMPLETE</li>
+        {% else %}
+            <li>{{item.text}} = INCOMPLETE</li>
         {% endif %}
     </ul>
     {% endfor %}
