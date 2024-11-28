@@ -6,6 +6,11 @@
     <title>My website</title>
 </head>
 <body>
-    <p>{{name}}</p>
+    <div id="content", name="content">
+        {% block content %}
+        {% endblock %}
+        {% block content2 %}
+        {% endblock %}
+    </div>
 </body>
 </html>
