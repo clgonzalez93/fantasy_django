@@ -11,4 +11,8 @@ def index(response, id):
     return HttpResponse("<h1>%s</h1><br></br><p>%s</p>" % (ls.name, str(item.text)))
 
 
+def home(response):
+    pass
+
+
 # python manage.py runserver
