@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import ToDoList, Item
+from .forms import CreateNewList
 
 # Create your views here.
 
@@ -14,8 +15,17 @@ def home(response):
     return render(response, "main/home.html", {})
 
 
-def createe(response):
-    return render(response, "main/create.html", {})
+def create(response):
+    if response.method == "POST":
+        form = CreateNewList(response.POST)
+        # is_valid is coming from django's form import
+        if form.is_valid():
+            n = form.cleaned_data["name"]
+            t = ToDoList(name=n)
+            t.save()
+    else:
+        form = CreateNewList()
+    return render(response, "main/create.html", {"form": form})
 
 
 # python manage.py runserver
