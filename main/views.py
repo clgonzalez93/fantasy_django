@@ -14,4 +14,8 @@ def home(response):
     return render(response, "main/home.html", {})
 
 
+def createe(response):
+    return render(response, "main/create.html", {})
+
+
 # python manage.py runserver
