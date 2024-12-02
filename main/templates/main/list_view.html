@@ -3,7 +3,7 @@
 View lists
 {% endblock %}
 {% block content %}
-<h1>Lists</h1>
+    <h1>Lists</h1>
 {% endblock %}
 {% block content2 %}
 <h2>{{ls.name}}</h2>
@@ -12,9 +12,9 @@ View lists
     <ul>
         {% for item in ls.item_set.all %}
             {% if item.complete == True %}
-                <li><input type="checkbox", value="clicked", name="c{{item.id}}" checked>{{item.text}} = COMPLETE</li>
+                <li><input type="checkbox", value="clicked", name="c{{item.id}}" checked>{{item.text}}</li>
             {% else %}
-                <li><input tyeo="checkbox", value="clicked", name="c{{item.id}}">{{item.text}} = INCOMPLETE</li>
+                <li><input type="checkbox", value="clicked", name="c{{item.id}}">{{item.text}}</li>
             {% endif %}
         {% endfor %}
     </ul>
