@@ -12,9 +12,9 @@ View lists
     <ul>
         {% for item in ls.item_set.all %}
             {% if item.complete == True %}
-                <li><input type="checkbox", value="clicked", name="c{{item.id}}" checked>{{item.text}}</li>
+                <li><input type="checkbox", value="clicked", name="c{{item.id}}" checked>{{item.text}} (complete)</li>
             {% else %}
-                <li><input type="checkbox", value="clicked", name="c{{item.id}}">{{item.text}}</li>
+                <li><input type="checkbox", value="clicked", name="c{{item.id}}">{{item.text}} (incomplete)</li>
             {% endif %}
         {% endfor %}
     </ul>
