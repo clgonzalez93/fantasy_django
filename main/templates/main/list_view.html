@@ -20,10 +20,16 @@ View lists
         </div>
         <input type="text", value="{{item.text}}" class="form-control">
     </div>
-        {% endfor %}
-    <button type="submit", name="save", value="save">Save</button>
-    <input type="text", name="new">
-    <button type="submit", name="newItem", value="newItemsave">Add item</button>
+    {% endfor %}
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <button type="submit", name="newItem", value="newItemsave", class="btn btn-success">Add item</button>
+        </div>
+        <input type="text", name="new">
+    </div>
+
+    <button type="submit", name="save", value="save", class="btn btn-success">Save</button>
 </form>
     
 {% endblock %}
