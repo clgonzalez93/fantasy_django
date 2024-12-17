@@ -43,6 +43,12 @@
         <a href="/">Home</a>
         <a href="/create">Create</a>
         <a href="/2">View</a>
+        {% if user.is_authenticated %}
+            <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger w-100 mt-3">Logout</button>
+            </form>
+        {% endif %}
     </div>
 
     <div id="content", name="content", class="main">
@@ -50,8 +56,12 @@
             <div class="col-8">
                 <h1 class="mt2">My site</h1>
                 <hr class="mt-0 mb-4">
-                {% block content %}
-                {% endblock %}
+                {% if user.is_authenticated %}
+                    {% block content %}
+                    {% endblock %}
+                {% else %}
+                    Login <a href="/login"> here</a>
+                {% endif %}
             </div>
         </div>
     </div>
